@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: 'Fx', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+input:focus { 
+  outline: none; 
+}
