@@ -78,6 +78,7 @@ const INITIAL_STATE: ISystemStore = {
       padding: 64,
       margin: 64,
       navHeight: 72,
+      borderRadius: 16,
     },
   },
   Mobile: {
@@ -99,6 +100,7 @@ const INITIAL_STATE: ISystemStore = {
       padding: 32,
       margin: 32,
       navHeight: 64,
+      borderRadius: 12,
     },
   },
   breakWidth: 768,

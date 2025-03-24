@@ -20,9 +20,9 @@ function Button({ title, titleColor, color, fill, onPress, }: IButtonProps) {
       <TouchableOpacity
         onPress={onPress}
         style={{
-          flexDirection: 'row', width: '100%', justifyContent: 'center', alignItems: 'center', padding: 16, borderRadius: 8,
-          backgroundColor: color, borderWidth: 3,
-          borderColor: Colors.lightBlue, overflow: 'hidden',
+          flexDirection: 'row', width: '100%', justifyContent: 'center', alignItems: 'center', padding: 8, borderRadius: Spacing.borderRadius,
+          backgroundColor: color, borderWidth: 1,
+          borderColor: Colors.white, overflow: 'hidden',
         }}
       >
         <View style={{
@@ -32,7 +32,7 @@ function Button({ title, titleColor, color, fill, onPress, }: IButtonProps) {
         />
 
         <Text style={{
-          color: Colors.lightBlue, fontSize: Fonts.lg, fontWeight: Fonts.cruiserWeight,
+          color: Colors.white, fontSize: Fonts.md, fontWeight: Fonts.featherWeight,
           // textShadowOffset: { width: 0.5, height: 0.5, }, textShadowRadius: 8, textShadowColor: School.tone,
         }}>{title}</Text>
       </TouchableOpacity>

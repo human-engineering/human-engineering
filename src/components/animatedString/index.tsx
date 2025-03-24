@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { View } from 'react-native'
+import { TouchableOpacity, } from 'react-native'
 import { useSelector } from 'react-redux'
 import { IStores } from '../../state/store'
 import Text from '../text'
@@ -7,16 +7,17 @@ import Text from '../text'
 interface AnimatedStringProps {
   style?: any,
   delay?: number,
+  onPress?: () => void,
 }
 
-const AnimatedString: React.FC<AnimatedStringProps> = ({ style, delay = 0 }) => {
+const AnimatedString: React.FC<AnimatedStringProps> = ({ style, delay = 0, onPress, }) => {
   const systemStore = useSelector((state: IStores) => state.systemStore)
   const { Colors, Fonts } = systemStore.mobile ? systemStore.Mobile : systemStore.Desktop
 
   const transformations: any = {
     'human ': 'h.',
     'engineering ': 'e.',
-    'laboratories ': 'labs/'
+    'laboratories ': 'labs/',
   }
 
   const words = Object.keys(transformations)
@@ -70,7 +71,10 @@ const AnimatedString: React.FC<AnimatedStringProps> = ({ style, delay = 0 }) => 
   }
   
   return (
-    <View style={[{ flexDirection: 'row', flexWrap: 'wrap' }, style]}>
+    <TouchableOpacity
+      onPress={() => onPress?.()}
+      style={[{flexDirection: 'row', flexWrap: 'wrap', top: 8, marginRight: 12,}, style]}
+    >
       {words.map((word, index) => (
         <Text
           key={index}
@@ -79,7 +83,7 @@ const AnimatedString: React.FC<AnimatedStringProps> = ({ style, delay = 0 }) => 
           {interpolateWord(word, progress[index])}
         </Text>
       ))}
-    </View>
+    </TouchableOpacity>
   )
 }
 

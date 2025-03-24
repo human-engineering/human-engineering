@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState, } from 'react'
 import { TouchableOpacity, View, } from 'react-native'
 import { useSelector } from 'react-redux'
 import { IStores } from '../../state/store'
@@ -6,6 +6,8 @@ import Block from './Block'
 import { compact, organization, thumbnail, video, } from '../../utils/constants'
 import BlurBackground from '../blurBackground'
 import AnimatedString from '../animatedString'
+import Input from '../input'
+import Button from '../button'
 
 interface IMediaBlockProps {
   order: number,
@@ -13,6 +15,8 @@ interface IMediaBlockProps {
 function MediaBlock({ order, }: IMediaBlockProps) {
   const systemStore = useSelector((state: IStores) => state.systemStore)
   const { Colors, Fonts, Spacing, } = systemStore.mobile ? systemStore.Mobile : systemStore.Desktop
+
+  const [showInputs, setShowInputs] = useState<boolean>(false)
 
   const videoRef = useRef<HTMLVideoElement>(null)
   if (videoRef.current) {
@@ -88,11 +92,32 @@ function MediaBlock({ order, }: IMediaBlockProps) {
           </video>
         </View>
 
-        <TouchableOpacity
-          style={{position: 'absolute', zIndex: 1, padding: Spacing.padding,}}
+        <View
+          style={{position: 'absolute', zIndex: 1, width: '100%', padding: Spacing.padding,}}
         >
-          <AnimatedString delay={2000} />
-        </TouchableOpacity>
+          <View style={{width: '100%', flexDirection: 'row',}}>
+            <AnimatedString delay={2000} onPress={() => setShowInputs(true)} />
+
+            {showInputs &&
+              <Input
+                placeholder={'Your email'}
+              />
+            }
+          </View>
+
+          {showInputs &&
+            <>
+              <Input
+                placeholder={'What do you want to build?'}
+                multiline={true}
+              />
+
+              <Button
+                title={'Send'}
+              />
+            </>
+          }
+        </View>
     </Block>
   )
 }

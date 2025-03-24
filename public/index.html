@@ -9,16 +9,14 @@
       name="description"
       content="helabs"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <link rel="preload" href="./assets/media/thumbnail.png" as="image" type="image/png">
-    <link rel="preload" href="./assets/fonts/Lx.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="%PUBLIC_URL%/assets/fonts/Lx.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
     <title>helabs</title>
 
     <style>
-      @font-face { font-family: 'Fx'; src: url('./assets/fonts/Lx.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
+      @font-face { font-family: 'Fx'; src: url('%PUBLIC_URL%/assets/fonts/Lx.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
 
       html, body {
         background-color: rgba(23,25,30, 1);
@@ -37,7 +35,6 @@
     </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
 </html>
