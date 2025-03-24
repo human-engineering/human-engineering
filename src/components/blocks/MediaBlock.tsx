@@ -5,6 +5,7 @@ import { IStores } from '../../state/store'
 import Block from './Block'
 import { compact, organization, thumbnail, video, } from '../../utils/constants'
 import BlurBackground from '../blurBackground'
+import AnimatedString from '../animatedString'
 
 interface IMediaBlockProps {
   order: number,
@@ -90,7 +91,7 @@ function MediaBlock({ order, }: IMediaBlockProps) {
         <TouchableOpacity
           style={{position: 'absolute', zIndex: 1, padding: Spacing.padding,}}
         >
-          {/* <AnimatedString value={organization} delay={2000} /> */}
+          <AnimatedString delay={2000} />
         </TouchableOpacity>
     </Block>
   )
