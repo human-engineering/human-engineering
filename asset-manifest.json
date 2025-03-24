@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/helabs/static/css/main.d5a29b4e.css",
-    "main.js": "/helabs/static/js/main.edcfe758.js",
+    "main.js": "/helabs/static/js/main.bc501fc7.js",
     "index.html": "/helabs/index.html",
     "main.d5a29b4e.css.map": "/helabs/static/css/main.d5a29b4e.css.map",
-    "main.edcfe758.js.map": "/helabs/static/js/main.edcfe758.js.map"
+    "main.bc501fc7.js.map": "/helabs/static/js/main.bc501fc7.js.map"
   },
   "entrypoints": [
     "static/css/main.d5a29b4e.css",
-    "static/js/main.edcfe758.js"
+    "static/js/main.bc501fc7.js"
   ]
 }
