@@ -58,7 +58,7 @@ const AnimatedString: React.FC<AnimatedStringProps> = ({ style, delay = 0, onPre
   }, [delay])
   
   const interpolateWord = (word: string, prog: number) => {
-    const target = transformations[word] || word
+    const target = transformations?.[word] || word
     if (prog === 0) return word
     if (prog === 1) return target
     const originalLength = word.length
