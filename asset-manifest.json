@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/human-engineering/static/css/main.d5a29b4e.css",
-    "main.js": "/human-engineering/static/js/main.2cd1970a.js",
+    "main.js": "/human-engineering/static/js/main.0050576b.js",
     "index.html": "/human-engineering/index.html",
     "main.d5a29b4e.css.map": "/human-engineering/static/css/main.d5a29b4e.css.map",
-    "main.2cd1970a.js.map": "/human-engineering/static/js/main.2cd1970a.js.map"
+    "main.0050576b.js.map": "/human-engineering/static/js/main.0050576b.js.map"
   },
   "entrypoints": [
     "static/css/main.d5a29b4e.css",
-    "static/js/main.2cd1970a.js"
+    "static/js/main.0050576b.js"
   ]
 }
