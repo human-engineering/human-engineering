@@ -15,9 +15,8 @@ const AnimatedString: React.FC<AnimatedStringProps> = ({ style, delay = 0, onPre
   const { Colors, Fonts } = systemStore.mobile ? systemStore.Mobile : systemStore.Desktop
 
   const transformations: any = {
-    'HUMaN ': 'H.',
-    'ENGiNEERING ': 'E.',
-    'LABORATORIES ': 'LABS/',
+    'HUMAN ': 'HUMaN',
+    'ENGINEERING': 'ENGiNEERING',
   }
 
   const words = Object.keys(transformations)
