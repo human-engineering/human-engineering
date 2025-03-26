@@ -1,6 +1,6 @@
 {
-  "homepage": "https://human-engineering.github.io/helabs",
-  "name": "helabs",
+  "homepage": "https://human-engineering.github.io/human-engineering",
+  "name": "human-engineering",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
