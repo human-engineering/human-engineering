@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/helabs/static/css/main.d5a29b4e.css",
-    "main.js": "/helabs/static/js/main.1ff1f41e.js",
-    "index.html": "/helabs/index.html",
-    "main.d5a29b4e.css.map": "/helabs/static/css/main.d5a29b4e.css.map",
-    "main.1ff1f41e.js.map": "/helabs/static/js/main.1ff1f41e.js.map"
+    "main.css": "/human-engineering/static/css/main.d5a29b4e.css",
+    "main.js": "/human-engineering/static/js/main.1ff1f41e.js",
+    "index.html": "/human-engineering/index.html",
+    "main.d5a29b4e.css.map": "/human-engineering/static/css/main.d5a29b4e.css.map",
+    "main.1ff1f41e.js.map": "/human-engineering/static/js/main.1ff1f41e.js.map"
   },
   "entrypoints": [
     "static/css/main.d5a29b4e.css",
