@@ -29,7 +29,7 @@ const AnimatedString: React.FC<AnimatedStringProps> = ({ style, delay = 0, onPre
     setProgress(words.map(() => 0))
     timeoutRef.current = setTimeout(() => {
       let startTime = Date.now()
-      const duration = 1500
+      const duration = 1000
       const animate = () => {
         const currentTime = Date.now()
         const elapsed = currentTime - startTime
