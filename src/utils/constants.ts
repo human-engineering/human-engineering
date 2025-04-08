@@ -62,7 +62,7 @@ export const projects = [
 ]
 
 export const projectsMap = (mobile: boolean | null) => {
-  const chunkSize = mobile ? 2 : 2
+  const chunkSize = mobile ? 1 : 2
   const chunks = []
   for (let i = 0; i < projects.length; i += chunkSize) chunks.push(projects.slice(i, i + chunkSize))
   return chunks

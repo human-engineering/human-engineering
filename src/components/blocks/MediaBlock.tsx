@@ -79,7 +79,7 @@ function MediaBlock({ order, }: IMediaBlockProps) {
   }
 
   const scrollY = useRef(new Animated.Value(0)).current
-  const headerOpacity = scrollY.interpolate({ inputRange: [300, 500], outputRange: [1, 0], extrapolate: 'clamp', })
+  const headerOpacity = scrollY.interpolate({ inputRange: [(Dimensions.get('window').height / 2) - 200, Dimensions.get('window').height / 2], outputRange: [1, 0], extrapolate: 'clamp', })
 
   return (
     <Block order={order}>
@@ -140,14 +140,14 @@ function MediaBlock({ order, }: IMediaBlockProps) {
                 key={colIndex}
                 onPointerEnter={systemStore.mobile ? undefined : () => handleFocusCol(colIndex, true)}
                 onPointerLeave={systemStore.mobile ? undefined : () => handleFocusCol(colIndex, false)}
-                style={{flex: animationsCol[colIndex], flexDirection: 'row',}}
+                style={{flex: animationsCol[colIndex], flexDirection: 'row', width: '100%',}}
               >
                 {col.map((item, rowIndex) => (
                   <Animated.View
                     key={rowIndex}
                     onPointerEnter={systemStore.mobile ? undefined : () => handleFocusRow(colIndex, rowIndex, true)}
                     onPointerLeave={systemStore.mobile ? undefined : () => handleFocusRow(colIndex, rowIndex, false)}
-                    style={{flex: animationsRow[colIndex][rowIndex],}}
+                    style={{flex: animationsRow[colIndex][rowIndex], width: '100%',}}
                   >
                     <View style={{width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center', padding: Spacing.paddingSm,}}>
                       <div
@@ -223,7 +223,7 @@ function MediaBlock({ order, }: IMediaBlockProps) {
                               padding: Spacing.paddingSm, justifyContent: 'center', alignItems: 'center', borderRadius: 16, overflow: 'hidden',
                               backgroundColor: Colors.safeDarkerBackground,
                             }}>
-                              <Text style={{fontSize: Fonts.sm, fontWeight: Fonts.cruiserWeight, color: Colors.white,}}>{item.description}</Text>
+                              <Text style={{fontSize: systemStore.mobile ? Fonts.md : Fonts.sm, fontWeight: Fonts.cruiserWeight, color: Colors.white,}}>{item.description}</Text>
                             </View>
                           </View>
                         }
