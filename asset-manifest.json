@@ -1,13 +1,22 @@
 {
   "files": {
     "main.css": "./static/css/main.d5a29b4e.css",
-    "main.js": "./static/js/main.1459704c.js",
+    "main.js": "./static/js/main.916ebf64.js",
+    "static/media/vietnam-background.png": "./static/media/vietnam-background.1e4a0f2b1835d2d9402b.png",
+    "static/media/serano-background.png": "./static/media/serano-background.d57187fd3b340706e975.png",
+    "static/media/autoworks-background.png": "./static/media/autoworks-background.4f177284c96e36704177.png",
+    "static/media/vietnam.png": "./static/media/vietnam.8b33f040a2c9a90746fd.png",
+    "static/media/brit.png": "./static/media/brit.dc9b8cc3d6cb19cc55be.png",
+    "static/media/kite.png": "./static/media/kite.a48f5abddd281eed104b.png",
+    "static/media/autoworks.png": "./static/media/autoworks.0851e005ceae0f212d11.png",
+    "static/media/exaltanic.png": "./static/media/exaltanic.acf53b0482e7f3496811.png",
+    "static/media/streetpass.png": "./static/media/streetpass.f7b1e1472f41ab0d2028.png",
     "index.html": "./index.html",
     "main.d5a29b4e.css.map": "./static/css/main.d5a29b4e.css.map",
-    "main.1459704c.js.map": "./static/js/main.1459704c.js.map"
+    "main.916ebf64.js.map": "./static/js/main.916ebf64.js.map"
   },
   "entrypoints": [
     "static/css/main.d5a29b4e.css",
-    "static/js/main.1459704c.js"
+    "static/js/main.916ebf64.js"
   ]
 }
