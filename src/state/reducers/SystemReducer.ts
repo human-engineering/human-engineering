@@ -104,7 +104,7 @@ const INITIAL_STATE: ISystemStore = {
     },
   },
   breakWidth: 768,
-  minHeight: 800,
+  minHeight: 600,
   width: null,
   height: null,
   mobile: null,
