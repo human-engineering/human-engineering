@@ -207,7 +207,7 @@ function MediaBlock({ order, }: IMediaBlockProps) {
 
                             {item.logo && <Image
                               source={{ uri: item.logo, }}
-                              style={{width: 104, height: '100%', resizeMode: 'contain', backgroundColor: Colors.white, borderRadius: 16, ...{pointerEvents: 'none',} as any,}}
+                              style={{width: 64, aspectRatio: 1/1, resizeMode: 'contain', backgroundColor: Colors.white, borderRadius: 16, ...{pointerEvents: 'none',} as any,}}
                             />}
 
                             <View style={{justifyContent: 'center', padding: Spacing.paddingSm,}}>

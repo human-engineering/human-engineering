@@ -40,17 +40,17 @@ export const projects = [
     images: [],
   },
   {
+    name: 'BRIT (acquired)',
+    description: `BRIT (Boxing Round Interval Timer) is a boxing personal training app that utilizes machine learning to instruct on form and intensity. Set your round count, round time and break time, and BRIT's text-to-speech model will automatically instruct you to be a better boxer and have more effective workouts. Acquired in 2020.`,
+    icon: require('../assets/media/brit.png'),
+    images: [],
+  },
+  {
     name: 'Vietnam House Victoria',
     logo: require('../assets/media/vietnam.png'),
     background: require('../assets/media/vietnam-background.png'),
     images: [],
     onPress: () => Linking.openURL('https://vietnamhousevictoria.com'),
-  },
-  {
-    name: 'BRIT (acquired)',
-    description: `BRIT (Boxing Round Interval Timer) is a boxing personal training app that utilizes machine learning to instruct on form and intensity. Set your round count, round time and break time, and BRIT's text-to-speech model will automatically instruct you to be a better boxer and have more effective workouts. Acquired in 2020.`,
-    icon: require('../assets/media/brit.png'),
-    images: [],
   },
   {
     name: 'Legend Autoworks',
