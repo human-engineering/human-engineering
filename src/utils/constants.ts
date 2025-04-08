@@ -28,7 +28,7 @@ export const projects = [
     images: [],
   },
   {
-    name: 'Serano Properties (acquired)',
+    name: 'Serano Properties (sold)',
     logo: require('../assets/media/serano.png'),
     background: require('../assets/media/serano-background.png'),
     images: [],
