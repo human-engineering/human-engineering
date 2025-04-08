@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, } from 'react'
-import { Animated, Dimensions, Image, ScrollView, TouchableOpacity, View, } from 'react-native'
+import { Animated, Dimensions, Image, Linking, ScrollView, TouchableOpacity, View, } from 'react-native'
 import { useSelector } from 'react-redux'
 import { IStores } from '../../state/store'
 import Block from './Block'
@@ -234,6 +234,18 @@ function MediaBlock({ order, }: IMediaBlockProps) {
                 ))}
               </Animated.View>
             ))}
+
+            <View style={{width: '100%', justifyContent: 'center', alignItems: 'center', padding: Spacing.paddingSm,}}>
+              <TouchableOpacity
+                activeOpacity={1}
+                onPress={() => Linking.openURL('mailto:contact@human.engineering')}
+                style={{width: '100%', justifyContent: 'center', alignItems: 'center', padding: Spacing.paddingSm, marginTop: 16, borderRadius: 16, overflow: 'hidden',}}
+              >
+                <BlurBackground />
+
+                <Text style={{color: Colors.white, fontSize: Fonts.xl, fontWeight: Fonts.featherWeight,}}>Send us an email</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
         
