@@ -8,7 +8,7 @@ export const video = 'https://hel-case.s3.us-east-2.amazonaws.com/video.mp4'
 export const projects: Array<any> = [
   {
     name: 'human engineering',
-    description: `human engineering [sic] is a software engineering team from Vancouver BC Canada. Mobile app development, AI and machine learning software, local business webpages--no project is too big or small for us.\n\n-> Contact us`,
+    description: `human engineering [sic] is a software engineering team from Vancouver BC Canada specializing in mobile app development, AI and machine learning software, and web development.\n\n-> Contact us`,
     icon: thumbnail,
     images: [],
     highlight: true,
