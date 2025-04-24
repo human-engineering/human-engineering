@@ -6,6 +6,7 @@ import Block from './Block'
 import { compact, organization, projectsMap, thumbnail, video, } from '../../utils/constants'
 import BlurBackground from '../blurBackground'
 import Text from '../text'
+import { ReactComponent as ChevronDownIcon, } from '../../assets/icons/chevron-down-filled.svg'
 
 interface IMediaBlockProps {
   order: number,
@@ -124,15 +125,15 @@ function MediaBlock({ order, }: IMediaBlockProps) {
         onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY, }, }, }], { useNativeDriver: true, })}
         scrollEventThrottle={16}
       >
-        <View style={{height: Dimensions.get('window').height - 144,}} />
+        <View style={{height: Dimensions.get('window').height - 160,}} />
 
         <View style={{width: '100%', justifyContent: 'center', alignItems: 'center',}}>
           <View style={{width: '100%', justifyContent: 'center', alignItems: 'center', maxWidth: 1000,}}>
             <TouchableOpacity
               onPress={() => scrollRef.current?.scrollTo?.({ y: Dimensions.get('window').height - 144, animated: true, })}
-              style={{width: '100%', justifyContent: 'center', alignItems: 'center', marginBottom: 32,}}
+              style={{width: '100%', justifyContent: 'center', alignItems: 'center', marginBottom: 32, opacity: 0.7,}}
             >
-              <Text style={{color: Colors.white, fontSize: Fonts.xxl, fontWeight: Fonts.heavyWeight,}}>Projects</Text>
+              <ChevronDownIcon style={{width: Fonts.xxxl, height: Fonts.xxxl,}} />
             </TouchableOpacity>
 
             {cols.map((col, colIndex) => (
@@ -196,30 +197,33 @@ function MediaBlock({ order, }: IMediaBlockProps) {
                           style={{position: 'absolute', zIndex: -2, width: '100%', height: '100%', resizeMode: 'cover', ...{pointerEvents: 'none',} as any,}}
                         />}
 
-                        <View style={{width: '100%',}}>
-                          <BlurBackground dark={true} />
+                        {(item.icon || item.logo || item.name) &&
+                          <View style={{width: '100%',}}>
+                            <BlurBackground dark={true} />
 
-                          <View style={{flexDirection: 'row', width: '100%', height: '100%',  padding: Spacing.paddingSm,}}>
-                            {item.icon && <Image
-                              source={{ uri: item.icon, }}
-                              style={{width: 64, aspectRatio: 1/1, resizeMode: 'cover', borderRadius: 16, ...{pointerEvents: 'none',} as any,}}
-                            />}
+                            <View style={{flexDirection: 'row', width: '100%', height: '100%',  padding: Spacing.paddingSm,}}>
+                              {item.icon && <Image
+                                source={{ uri: item.icon, }}
+                                style={{width: 64, aspectRatio: 1/1, resizeMode: 'cover', borderRadius: 16, ...{pointerEvents: 'none',} as any,}}
+                              />}
 
-                            {item.logo && <Image
-                              source={{ uri: item.logo, }}
-                              style={{width: 64, aspectRatio: 1/1, resizeMode: 'contain', backgroundColor: Colors.white, borderRadius: 16, ...{pointerEvents: 'none',} as any,}}
-                            />}
+                              {item.logo && <Image
+                                source={{ uri: item.logo, }}
+                                style={{width: 64, aspectRatio: 1/1, resizeMode: 'contain', backgroundColor: Colors.white, borderRadius: 16, ...{pointerEvents: 'none',} as any,}}
+                              />}
 
-                            <View style={{justifyContent: 'center', padding: Spacing.paddingSm,}}>
-                              <Text style={{fontSize: Fonts.lg, fontWeight: Fonts.cruiserWeight, color: Colors.white,}}>{item.name}</Text>
+                              <View style={{justifyContent: 'center', padding: Spacing.paddingSm,}}>
+                                <Text style={{fontSize: Fonts.lg, fontWeight: Fonts.cruiserWeight, color: Colors.white,}}>{item.name}</Text>
+                              </View>
                             </View>
-                          </View>
 
-                        </View>
+                          </View>
+                        }
 
                         {item.description &&
-                          <View style={{flex: 1, padding: Spacing.paddingMd, justifyContent: 'center', alignItems: 'center',}}>
+                          <View style={{flex: 1, padding: Spacing.paddingMd, justifyContent: 'center', alignItems: 'center', overflow: 'hidden',}}>
                             <View style={{
+                              width: '100%', height: '100%',
                               padding: Spacing.paddingSm, justifyContent: 'center', alignItems: 'center', borderRadius: 16, overflow: 'hidden',
                               backgroundColor: Colors.safeDarkerBackground,
                             }}>
