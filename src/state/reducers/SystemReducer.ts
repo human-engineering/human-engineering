@@ -75,6 +75,7 @@ const INITIAL_STATE: ISystemStore = {
     Spacing: {
       paddingSm: 16,
       paddingMd: 32,
+      paddingLg: 128,
       padding: 64,
       margin: 64,
       navHeight: 72,
