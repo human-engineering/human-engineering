@@ -1,6 +1,6 @@
 import React, { useRef, } from 'react'
 import BlockBox from '../components/blocks/BlockBox'
-import MediaBlock from '../components/blocks/MediaBlock'
+import HeroBlock from '../components/blocks/HeroBlock'
 
 export interface IHomeProps {
 
@@ -11,7 +11,7 @@ function Home({ }: IHomeProps) {
   return (
     <>
       <BlockBox masterRef={masterRef}>
-        <MediaBlock order={0} />
+        <HeroBlock order={0} />
       </BlockBox>
     </>
   )

@@ -39,7 +39,7 @@ export const Colors = {
   lightBlue: 'rgba(0,114,253,1)',
   blue: 'rgba(0,29,253,255)',
   darkBlue: 'rgba(0,0,256,1)',
-  darkerBlue: 'rgba(23,25,30, 1)',
+  darkerBlue: 'rgba(23,25,90,1)',
   green: 'rgba(40,240,40,0.9)',
   darkGreen: 'rgba(20,220,20,1)',
   black: 'rgba(0,0,0,1)',
