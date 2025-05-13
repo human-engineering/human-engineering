@@ -37,6 +37,7 @@ function HeroBlock({ order, }: IHeroBlockProps) {
   const systemStore = useSelector((state: IStores) => state.systemStore)
   const { Colors, Fonts, Spacing, } = systemStore.mobile ? systemStore.Mobile : systemStore.Desktop
 
+  const pulseLoop = useRef(true)
   const [displayedQuote, setDisplayedQuote] = useState<{ [key: number]: string }>(Object.fromEntries(quote.map((_, i) => [i, ''])))
 
   const animatedTitleRef = useRef(new Animated.Value(1)).current
@@ -52,12 +53,16 @@ function HeroBlock({ order, }: IHeroBlockProps) {
       if (i >= quote[index].length) clearInterval(interval)
     }, 80)
   }
+
   const animate = () => {
-    Animated.timing(animatedTitleRef, {
-      toValue: 0,
-      duration: 700,
-      useNativeDriver: true,
-    }).start()
+    pulseLoop.current = false
+    animatedTitleRef.stopAnimation(() => {
+      Animated.timing(animatedTitleRef, {
+        toValue: 0,
+        duration: 700,
+        useNativeDriver: true,
+      }).start()
+    })
     quote.forEach((_, i) => {
       const delay = quote.slice(0, i).reduce((total, line) => total + line.length * 80, 0)
       setTimeout(() => animateQuote(i), delay)
@@ -81,6 +86,37 @@ function HeroBlock({ order, }: IHeroBlockProps) {
       }).start()
     })
   }
+
+  const startPulse = () => {
+    pulseLoop.current = true
+    animatedTitleRef.setValue(1)
+    const pulse = () => {
+      if (!pulseLoop.current) return
+      Animated.timing(animatedTitleRef, {
+        toValue: 0.7,
+        duration: 3000,
+        useNativeDriver: true,
+      }).start(() => {
+        if (!pulseLoop.current) return
+        Animated.timing(animatedTitleRef, {
+          toValue: 1,
+          duration: 3000,
+          useNativeDriver: true,
+        }).start(() => {
+          if (pulseLoop.current) pulse()
+        })
+      })
+    }
+    pulse()
+  }
+  
+  React.useEffect(() => {
+    startPulse()
+    return () => {
+      pulseLoop.current = false
+      animatedTitleRef.stopAnimation()
+    }
+  }, [])
 
   return (
     <Block order={order} style={{overflow: 'hidden', backgroundColor: Colors.safeLightestBackground,}}>
