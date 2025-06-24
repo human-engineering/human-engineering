@@ -93,8 +93,8 @@ function HeroBlock({ order, }: IHeroBlockProps) {
     const pulse = () => {
       if (!pulseLoop.current) return
       Animated.timing(animatedTitleRef, {
-        toValue: 0.7,
-        duration: 3000,
+        toValue: 0.5,
+        duration: 5000,
         useNativeDriver: true,
       }).start(() => {
         if (!pulseLoop.current) return
@@ -128,7 +128,7 @@ function HeroBlock({ order, }: IHeroBlockProps) {
           activeOpacity={1}
           onPress={animate}
         >
-          <Text style={{color: Colors.safeDarker, fontSize: Fonts.lg, fontWeight: Fonts.featherWeight, userSelect: 'none',}}>human engineering</Text>
+          <Text style={{color: Colors.safeDarker, fontSize: Fonts.md, fontWeight: Fonts.featherWeight, userSelect: 'none',}}>human engineering</Text>
         </TouchableOpacity>
       </Animated.View>
 
@@ -150,7 +150,7 @@ function HeroBlock({ order, }: IHeroBlockProps) {
         </View>
       </View>
 
-      {lines.map((line, i) => {
+      {/* {lines.map((line, i) => {
         return (
           <Animated.View
             key={i}
@@ -162,7 +162,7 @@ function HeroBlock({ order, }: IHeroBlockProps) {
             <Text style={{color: Colors.safeDarker, fontSize: Fonts.sm, fontWeight: Fonts.lightWeight, userSelect: 'none',}}>{line}</Text>
           </Animated.View>
         )
-      })}
+      })} */}
 
       <Animated.View style={{
         position: 'absolute', zIndex: 1, width: '100%', bottom: 0, justifyContent: 'flex-end', alignItems: 'center', padding: Spacing.paddingMd,
@@ -173,7 +173,7 @@ function HeroBlock({ order, }: IHeroBlockProps) {
             Linking.openURL(`mailto:${email}`)
           }}
         >
-          <Text style={{color: Colors.darkerBlue, fontSize: Fonts.lg, fontWeight: Fonts.featherWeight, userSelect: 'none',}}>get in touch.</Text>
+          <Text style={{color: Colors.darkerBlue, fontSize: Fonts.md, fontWeight: Fonts.featherWeight, userSelect: 'none',}}>contact</Text>
         </TouchableOpacity>
       </Animated.View>
     </Block>
