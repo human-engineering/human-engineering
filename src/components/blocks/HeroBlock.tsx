@@ -94,7 +94,7 @@ function HeroBlock({ order, }: IHeroBlockProps) {
       if (!pulseLoop.current) return
       Animated.timing(animatedTitleRef, {
         toValue: 0.5,
-        duration: 5000,
+        duration: 7000,
         useNativeDriver: true,
       }).start(() => {
         if (!pulseLoop.current) return
